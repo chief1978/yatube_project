@@ -18,7 +18,7 @@ from django.urls import path
 from django.urls.conf import include
 
 urlpatterns = [
-    # Импорт правил из приложения posts
+    # Импорт правил из приложения posts, не забываем про namespace
     path('', include('posts.urls', namespace='posts')),
     # Админка django
     path('admin/', admin.site.urls),
