@@ -19,7 +19,7 @@ from django.urls.conf import include
 
 urlpatterns = [
     # Импорт правил из приложения posts
-    path('', include('posts.urls')),
+    path('', include('posts.urls', namespace='posts')),
     # Админка django
     path('admin/', admin.site.urls),
 ]
