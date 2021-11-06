@@ -10,5 +10,5 @@ urlpatterns = [
     # Главная страница
     path('', views.index, name='index'),
     # Посты с фильтром по имени группы
-    path('group/<slug:group_name>/', views.group_posts, name='group_posts'),
+    path('group/<slug:slug>/', views.group_posts, name='slug'),
 ]
