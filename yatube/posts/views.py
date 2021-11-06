@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Post, Group
 
+
 def index(request):
-    """ 
+    """
     View для главной страница проекта.
     Выводит 10 последних сообщений
     """
@@ -18,10 +19,11 @@ def index(request):
     # подготовливаем контекст для страницы, заголовок и сами посты
     context = {
         'title': title,
-        'posts': posts,        
-    }    
+        'posts': posts,
+    }
     # рендерим ...
     return render(request, template, context)
+
 
 def group_posts(request, slug):
     """
@@ -31,7 +33,7 @@ def group_posts(request, slug):
     к просмотру сообщения сообщества.
     Для просмотра доступны 10 последних сообщений сообщества
     """
-    # Функция get_object_or_404 получает по заданным критериям объект 
+    # Функция get_object_or_404 получает по заданным критериям объект
     # из базы данных или возвращает сообщение об ошибке, если объект не найден.
     # В нашем случае в переменную group будут переданы объекты модели Group,
     # поле slug у которых соответствует значению slug в запросе

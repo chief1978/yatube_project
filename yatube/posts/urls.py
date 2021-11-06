@@ -4,7 +4,7 @@ from django.urls import path
 
 from . import views
 
-# Задаём namespace 
+# Задаём namespace
 app_name = 'posts'
 
 urlpatterns = [

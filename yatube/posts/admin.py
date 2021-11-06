@@ -1,7 +1,9 @@
 from django.contrib import admin
 
+
 # Из модуля models импортируем модель Post и Group
 from .models import Post, Group
+
 
 class PostAdmin(admin.ModelAdmin):
     # Класс для настройки отображения постов в админке
@@ -21,6 +23,7 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ('pub_date',)
     empty_value_display = '-пусто-'
 
+
 class GroupAdmin(admin.ModelAdmin):
     # Класс для настройки отображения сообществ в админке
     # Перечисляем поля, которые должны отображаться в админке
@@ -31,7 +34,7 @@ class GroupAdmin(admin.ModelAdmin):
         'description',
         )
     # Добавляем интерфейс для поиска по тексту постов
-    search_fields = ('title',) 
+    search_fields = ('title',)
     empty_value_display = '-пусто-'
 
 

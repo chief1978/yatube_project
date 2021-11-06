@@ -1,7 +1,9 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 
-User = get_user_model() 
+
+User = get_user_model()
+
 
 class Group(models.Model):
     # Класс - сообщества
@@ -16,6 +18,7 @@ class Group(models.Model):
     # __str__ будет возвращать название сообщества
     def __str__(self):
         return self.title
+
 
 class Post(models.Model):
     # Класс - посты
@@ -39,9 +42,9 @@ class Post(models.Model):
     # Создаём обратную связь с именем posts
     # Может отсуствовать
     group = models.ForeignKey(
-        Group, 
-        on_delete=models.CASCADE, 
-        related_name='posts', 
-        blank=True, 
+        Group,
+        on_delete=models.CASCADE,
+        related_name='posts',
+        blank=True,
         null=True
     )
